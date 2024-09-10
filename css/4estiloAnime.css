@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 0.75fr 1fr 0.75fr 1fr 0.1fr; 
+    gap: 0px 0px;
+    grid-auto-flow: row;
+}
+  
+.BarraOpciones {
+    grid-area: 1 / 1 / 7 / 2;
+    background-color: #d65555;
+}
+
+.sub-menu {
+    padding: 0 0 0 2%;
+    left: -250px;
+    top: 0;
+    transition: all 0.3s ease;
+    height: 100%;
+    width: 210px;
+    position: fixed;
+    margin: 0;
+    background-color: #f6f2ec;
+    border-radius: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.sub-menu.oppenned {
+    left: 0;
+}
+.sub-menu ul {
+    margin: 0;
+}
+.sub-menu li {
+    display: block;
+    list-style: none;
+    height: auto;
+    margin-left: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.sub-menu li:first-child {
+    margin-top: 100px;
+}
+.sub-menu li a {
+    padding-top: 20px;
+    color: black;
+    font-size: 19px;
+    width: 100%;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+.sub-menu li a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+.c-hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.c-hamburger:focus {
+    outline: none;
+}
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: white;
+}
+.c-hamburger span:before, .c-hamburger span:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    content: "";
+}
+.c-hamburger span:before {
+    top: -10px;
+}
+.c-hamburger span:after {
+    bottom: -10px;
+}
+  
+.c-hamburger--htx span {
+    transition: background 0s 0.3s;
+}
+.c-hamburger--htx span:before, .c-hamburger--htx span:after {
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+}
+.c-hamburger--htx span:before {
+    transition-property: top, transform;
+}
+.c-hamburger--htx span:after {
+    transition-property: bottom, transform;
+}
+.c-hamburger--htx.is-active span {
+    background: none;
+}
+.c-hamburger--htx.is-active span:before, .c-hamburger--htx.is-active span:after { 
+    transition-delay: 0s, 0.3s;
+}
+.c-hamburger--htx.is-active span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.c-hamburger--htx.is-active span:after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+:root{
+    font-size: 20px;
+}
+
+.Header{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "logo1 titulo logo2"; 
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: #87b6be;
+    color: #f6f2ec;
+    text-align: center;
+}
+  
+.titulo{
+    grid-area: titulo;
+    font-size: 2rem;
+    text-align: center;
+    align-content: center;
+}
+  
+.logo1{
+    grid-area: logo1;
+    text-align: center;
+    align-content: center;
+}
+
+#logoHeader{
+    max-width: 48%;
+    max-height: 48%;
+}
+  
+.logo2{
+    grid-area: logo2;
+    text-align: center;
+    align-content: center;
+}
+
+.Footer {
+    grid-area: 6 / 1 / 7 / 4; 
+    background-color: #87b6be;
+    color: #f6f2ec;
+    text-align: center;
+    align-items: center;
+}
+
+.Texto31 {
+    grid-area: 2 / 2 / 3 / 4;
+    background-color: #d65555;
+    padding-top: 50px;
+    padding-right: 40px;
+}
+  
+.Texto32 {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: #d65555;
+}
+
+.Imagen32 {
+    grid-area: 3 / 3 / 4 / 4;
+    background-color: #d65555;
+    text-align: center;
+    align-content: center;
+}
+
+.Texto33 {
+    grid-area: 4 / 2 / 5 / 4;
+    background-color: #d65555;
+    align-content: center;
+}
+  
+.Imagen33 {
+    grid-area: 5 / 2 / 6 / 4; 
+    background-color: #d65555;
+    text-align: center;
+    align-content: center;
+}
+
+h1{
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+h3{
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+p{
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#logoSerie{
+    max-width: 200%;
+    max-height: 200%;
+}
+
+#logoHorizontes{
+    max-height: 80%;
+    max-width: 80%;
+    padding-bottom: 10px;
+}
+
+#logoBarra{
+    max-width: 90%;
+    max-height: 90%;
+}
+  
+#CentrarLogo{
+    text-align: left;
+}
+  
+.TextoLink{
+    text-align: center;
+    text-decoration: none;
+}

@@ -1,0 +1,470 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 769px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1fr 0.1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+    }
+      
+    .BarraOpciones {
+        grid-area: 1 / 1 / 5 / 2;
+        background-color: #d65555;}
+    
+    .sub-menu {
+        padding: 0 0 0 2%;
+        left: -250px;
+        top: 0;
+        transition: all 0.3s ease;
+        height: 100%;
+        width: 210px;
+        position: fixed;
+        margin: 0;
+        background-color: #f6f2ec;
+        border-radius: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+    .sub-menu.oppenned {
+        left: 0;
+    }
+    .sub-menu ul {
+        margin: 0;
+    }
+    .sub-menu li {
+        display: block;
+        list-style: none;
+        height: auto;
+        margin-left: 0;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .sub-menu li:first-child {
+        margin-top: 100px;
+    }
+    .sub-menu li a {
+        padding-top: 20px;
+        color: black;
+        font-size: 19px;
+        width: 100%;
+        display: block;
+        float: left;
+        text-transform: uppercase;
+        line-height: 30px;
+    }
+    .sub-menu li a:hover {
+        font-weight: bold;
+        text-decoration: none;
+    }
+      
+    .c-hamburger {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+        padding: 0;
+        width: 36px;
+        height: 36px;
+        z-index: 2;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .c-hamburger:focus {
+        outline: none;
+    }
+    .c-hamburger span {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: white;
+    }
+    .c-hamburger span:before, .c-hamburger span:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        content: "";
+    }
+    .c-hamburger span:before {
+        top: -10px;
+    }
+    .c-hamburger span:after {
+        bottom: -10px;
+    }
+      
+    .c-hamburger--htx span {
+        transition: background 0s 0.3s;
+    }
+    .c-hamburger--htx span:before, .c-hamburger--htx span:after {
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+    }
+    .c-hamburger--htx span:before {
+        transition-property: top, transform;
+    }
+    .c-hamburger--htx span:after {
+        transition-property: bottom, transform;
+    }
+    .c-hamburger--htx.is-active span {
+        background: none;
+    }
+    .c-hamburger--htx.is-active span:before, .c-hamburger--htx.is-active span:after { 
+        transition-delay: 0s, 0.3s;
+    }
+    .c-hamburger--htx.is-active span:before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .c-hamburger--htx.is-active span:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    
+    :root{
+        font-size: 20px;
+    }
+    
+    .Header{
+        display: grid;
+        grid-area: 1 / 1 / 2 / 5;
+        grid-template-rows: 0.25fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "logo1 titulo logo2";
+        background-color: #87b6be;
+        color: #f6f2ec;
+        text-align: center;
+    }
+    
+    .titulo{
+        grid-area: titulo;
+        font-size: 2rem;
+        text-align: center;
+        align-content: center;
+    }
+    
+    .logo1{
+        grid-area: logo1;
+        text-align: center;
+        align-content: center;
+    }
+    
+    .logo2{
+        grid-area: logo2;
+        text-align: center;
+        align-content: center;
+    }
+    
+      
+    .Texto-1 {
+        grid-area: 2 / 2 / 4 / 4;
+        background-color: #d65555;
+        align-content: center;
+        padding-right: 40px;
+        font-size: 1.1rem;
+    }
+      
+    .Imagen {
+        grid-area: 2 / 4 / 3 / 5;
+        align-content: center;
+        text-align: center;
+        background-color: #d65555;
+    }
+      
+    .TextoImagen {
+        grid-area: 3 / 4 / 4 / 5;
+        background-color: #d65555;
+        color: #f6f2ec;
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+      
+    .Footer {
+        grid-area: 4 / 1 / 5 / 5;
+        background-color: #87b6be;
+        color: #f6f2ec;
+        text-align: center;
+        align-content: center;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 0.1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "blanco blanco blanco"
+        "foot foot foot"
+    }
+    
+    h1{
+        font-family: "Black Ops One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+    h3{
+        font-family: "Jaro", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    p{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+    #Ash {
+        max-width: 90%;
+        max-height: 80%;
+        background-color: #f6f2ec;
+        border: solid, #87b6be, 10px;
+    }
+    
+    #logoHeader{
+        max-width: 50%;
+        max-height: 50%;
+    }
+    
+    #logoBarra{
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    #TAsh{
+        background-color: #87b6be;
+        padding: 10px;
+    }
+    
+    #CentrarLogo{
+        text-align: left;
+    }
+    
+    .TextoLink{
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .foot {
+        grid-area: foot;
+        background-color: #87b6be;
+        text-align: center;
+        align-content: center;
+    }
+    
+    .blanco {
+        grid-area: blanco;
+        background-color: #d65555;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.25fr 0.5fr 1.75fr 1.25fr 0.5fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "BarraOpciones BarraOpciones"
+          "Header Header"
+          "Texto1 Texto1"
+          "Imagen TextoImagen"
+          "Footer Footer";
+    }
+      
+    .BarraOpciones {
+        grid-area: BarraOpciones;
+        display: grid; 
+        grid-template-columns: 100%; 
+        grid-template-rows: 0.1fr 0.9fr; 
+        gap: 0px 0px; 
+        grid-template-areas:
+            "uno"    
+            "dos";
+        text-align: center;
+        align-content: center;
+        background-color: #f6f2ec;
+    }
+
+    .c-hamburger.c-hamburger--htx{
+        grid-area: uno;
+        visibility: hidden;
+    }
+
+    .sub-menu open{
+        grid-area: dos;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "logoBarra link1 link2 link3";
+        text-align: center;
+        align-content: center;
+    }
+
+    .list-unstyled{
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    #bandaLogo {
+        grid-area: logoBarra;
+        width: 25%;
+        align-content: center;
+        text-align: center;
+    }
+
+    #logoBarra{
+        width: 50%;
+    }
+
+    #link1 {
+        grid-area: link1;
+        align-content: center;
+        padding-right: 20px;
+    }
+
+    #link2 {
+        grid-area: link2;
+        align-content: center;
+        padding-right: 20px;
+    }
+
+    #link3 {
+        grid-area: link3;
+        align-content: center;
+        padding-right: 20px;
+    }
+
+    .TextoLink{
+        font-size: 1.5rem;
+        text-align: center;
+        color:black;
+        text-decoration: none;
+    }
+
+    .TextoLink:hover{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    :root{
+        font-size: 15px;
+    }
+
+    .Header {
+        grid-area: Header;
+        padding-top: 30px;
+        background-color: #87b6be;
+        color: #f6f2ec;
+        text-align: center;
+    }
+
+    .logo1{
+        visibility: hidden;
+        max-width: 0.1%;
+        max-height: 0.1%;
+    }
+    
+    .logo2{
+        visibility: hidden;
+        max-width: 0.1%;
+        max-height: 0.1%;
+    }
+
+    #logoHeader{
+        max-width: 0.1%;
+        max-height: 0.1%;
+    }
+
+    .titulo{
+        align-content: center;
+        text-align: center;
+        font-size: 2.5rem;
+        padding-top: 20px;
+    }
+      
+    .Texto-1 {grid-area: Texto1;
+        padding-top: 20px;
+        padding-left: 20px;
+        background-color: #d65555;
+        align-content: center;
+        padding-right: 40px;
+        font-size: 1.1rem;
+    }
+      
+    .TextoImagen {
+        grid-area: TextoImagen;
+        padding: 10px;
+        background-color: #d65555;
+        color: #f6f2ec;
+        padding-left: 30px;
+        padding-right: 20px;
+        text-align: center;
+        align-content: center;
+    }
+
+    #TAsh{
+        background-color: #87b6be;
+        padding: 10px;
+    }
+      
+    .Imagen {
+        grid-area: Imagen;
+        background-color: #d65555;
+        align-content: center;
+        text-align: center;
+    }
+
+    #Ash {
+        max-width: 90%;
+        max-height: 80%;
+        background-color: #f6f2ec;
+        border: solid, #87b6be, 10px;
+    }
+      
+    .Footer {
+        grid-area: Footer;
+        background-color:#87b6be;
+        text-align: center;
+        align-content: center;
+    }
+
+    h1{
+        font-family: "Black Ops One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+    h3{
+        font-family: "Jaro", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    p{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+    }
+      
+}
+
+      
+
+  
